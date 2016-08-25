@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- attribute that passes the name of my module -->
+<html ng-app='app' ng-app="ngMap">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>San Digeo Top Spots 2.0</title>
+
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="style.css">   
+        <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />  	
+    </head>
+
+    <body ng-controller="SDTopSpots" class="body">
+		<div>
+			<header>
+				<h1 class="h1">These are the top spots in San Diego</h1>
+			</header>
+		</div>
+		<div>
+			<table class=" table table-striped table-hover ">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Location</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="spot in spot" class="">
+						<td>{{spot.name}}</td>
+						<td>{{spot.description}}</td>
+						<td><a href="https://maps.google.com?q={{spot.location[0]}},{{spot.location[1]}}">
+							<button class="btn btn-success " type="submit" >Open in Google Maps</button>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		 <!-- <div id="mapid"> -->
+		<ng-map center="[32.726008, -117.1655245]" class="map"></ng-map>
+		 </div>
+
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

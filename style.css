@@ -1,0 +1,15 @@
+.body{
+
+	font-size: 14px;
+	line-height: 1.428;
+}
+
+#mapid { height: 400px; }
+
+.h1 {
+	text-align: center;
+}
+
+.map{
+	height: 400px;
+}
